@@ -12,13 +12,14 @@ The parser take three argument
  
  The csv file must have the following format : 
  
- | # |   seq_id                               |   GID          |   date        |   region  |   Sequence.run          |   Sequence.Barcode  |
-| 1 |----------------------------------------|----------------|---------------|-----------|-------------------------|---------------------|
-| 2 |   hCoV-19/Netherlands/xy-ZZZ-1001/2020 | EPI_ISL_xyyxzz |   15/05/2020  | anywhere  |   GRIDIon_Viro_Run_XXX  | BCXX                |
-| 3 |   hCoV-19/Netherlands/xy-ZZZ-1002/2020 | EPI_ISL_xyyxzz |   17/05/2020  | anywhere  |   GRIDIon_Viro_Run_XXX  | BCXX                |
-| 4 |   hCoV-19/Netherlands/xy-ZZZ-1003/2020 | EPI_ISL_xyyxzz |   18/05/2020  | anywhere  |   GRIDIon_Viro_Run_XXX  | BCXX                |
-| 5 |   hCoV-19/Netherlands/xy-ZZZ-1004/2020 | EPI_ISL_xyyxzz |   09/05/2020  | anywhere  |   GRIDIon_Viro_Run_XXX  | BCXX                |
-|  |                                        |                |               |           |                         |                     |
+| # |   seq_id                               |   GID          |   date        |   region  |   Sequence.run          |   Sequence.Barcode  |
+|---|----------------------------------------|----------------|---------------|-----------|-------------------------|---------------------|
+| 1 |   hCoV-19/Netherlands/xy-ZZZ-1001/2020 | EPI_ISL_xyyxzz |   15/05/2020  | anywhere  |   GRIDIon_Viro_Run_XXX  | BCXX                |
+| 2 |   hCoV-19/Netherlands/xy-ZZZ-1002/2020 | EPI_ISL_xyyxzz |   17/05/2020  | anywhere  |   GRIDIon_Viro_Run_XXX  | BCXX                |
+| 3 |   hCoV-19/Netherlands/xy-ZZZ-1003/2020 | EPI_ISL_xyyxzz |   18/05/2020  | anywhere  |   GRIDIon_Viro_Run_XXX  | BCXX                |
+| 4 |   hCoV-19/Netherlands/xy-ZZZ-1004/2020 | EPI_ISL_xyyxzz |   09/05/2020  | anywhere  |   GRIDIon_Viro_Run_X    | BCXX                |
+|   |                                        |                |               |           |                         |                     |
+|   |                                        |                |               |           |                         |                     |
 
 And can be obtained using the R script present in this repository ( join_lab_info_with_GISAIDId.R , the # must be manually added to the file )
 
