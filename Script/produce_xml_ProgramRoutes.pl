@@ -3,7 +3,7 @@
 use Modern::Perl '2011';
 
 use autodie;
-use Smart::Comments '###';
+use Smart::Comments '####';
 use Tie::IxHash;
 use Time::Piece;
 use List::MoreUtils qw(uniq);
@@ -12,11 +12,11 @@ use DBI;
 
 use warnings 'FATAL' => 'all'; #used to debug
 
-unless (@ARGV == 2) {
+unless (@ARGV == 3) {
   die << "EOT";
 Usage: $0 <csv_file> <md5file> <directory>
 This program parse the information present in the csv file and the md5 file into the three xml file: sample.xml, experiment.xml and run.xml for the ENA submission. You also need to provide a directory in which the xml files will be stored.
-Example: perl $0 already_GISAID.csv checklist.chk /Users/ENA-submission/xml-file/
+Example: perl $0 sample.csv checklist.chk /Users/ENA-submission/xml-file/
 EOT
 }
 
@@ -28,12 +28,19 @@ my $sample_xml = $directory . "sample.xml";
 my $exp_xml = $directory . "experiment.xml";
 my $run_xml = $directory . "run.xml";
 
+### Main script ###
 
-my @sample_data = extract_data($csv_file);
+# Extraction of the information fron both the csv file and the md5 file
+my $sample_data = extract_data($csv_file);
 my $md5_info = extract_data_md5($md5_file);
+
+# Creation of the 3 xml files
 fill_xml_sample($sample_data[0], $sample_data[1], $sample_xml);
 fill_xml_exp($sample_data[0], $exp_xml);
 fill_xml_run($sample_data[0], $md5_info, $run_xml);
+
+
+### Function ###
 
 ## Extraction of data from csv
 sub extract_data{
@@ -60,7 +67,8 @@ sub extract_data{
     }
     else {
       @infos = split( /\,/, $line, -1); # -1 to allow that empty spot at the end of the array are conserved
-
+		
+	  # Extract run information depending on the format it was written on the lab spreadsheet
       if ($infos[5] =~ m/GRIDIon_Viro_Run_\d{3}/xms) {
 		  $infos[5] =~ s/GRIDIon_Viro_(Run_\d{3})/$1/;
 		  $infos[5] =~ tr/_//d;
