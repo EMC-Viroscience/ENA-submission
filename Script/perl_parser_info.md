@@ -25,11 +25,13 @@ And can be obtained using the R script present in this repository ( join_lab_inf
 
 The md5 file as the format: 
 
-829fe2933c91a9dfd21a2f6829323050  RunXXX_BCXX.fastq.gz
-edad51d035047bee35858e48ef7eff57  RunXXX_BCXX.fastq.gz
-c0bcfe4426d4d2e66b0870d945a72ecc  RunXXX_BCXX.fastq.gz
-a375855f5c82049be582f0aa31ee0e1f  RunXXX_BCXX.fastq.gz
-a620a2c300e5183f3687520cd21c46d3  RunXXX_BCXX.fastq.gz
+```
+829fe2933c91a9dfd21a2f6829323050  RunXXX_BCXX.fastq.gz  
+edad51d035047bee35858e48ef7eff57  RunXXX_BCXX.fastq.gz  
+c0bcfe4426d4d2e66b0870d945a72ecc  RunXXX_BCXX.fastq.gz  
+a375855f5c82049be582f0aa31ee0e1f  RunXXX_BCXX.fastq.gz  
+a620a2c300e5183f3687520cd21c46d3  RunXXX_BCXX.fastq.gz  
+```
 
 This file can be obtain by running the following command in the directory containing the .fastq.gz files 
 
