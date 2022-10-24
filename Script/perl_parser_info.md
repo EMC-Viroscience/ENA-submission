@@ -36,6 +36,7 @@ a620a2c300e5183f3687520cd21c46d3  RunXXX_BCXX.fastq.gz
 This file can be obtain by running the following command in the directory containing the .fastq.gz files 
 
 ```bash
+for i in *.fastq; do pigz -c $i > gzip/$i.gz; done;
 md5sum * > checklist.chk
 ```
 

@@ -21,6 +21,11 @@ Curl command for a test submission:
 curl -u Webin-USER:PASS -F "SUBMISSION=@submission.xml" -F "SAMPLE=@sample.xml" -F "RUN=@run.xml" -F "EXPERIMENT=@exp.xml" "https://wwwdev.ebi.ac.uk/ena/submit/drop-box/submit/" >> runExpLog.txt 2>&1   
 ```
 
+Command to upload to ftp server: 
+```bash
+ftp webin2.ebi.ac.uk
+```
+
 `runExpLog.txt` file stores the progress and error logs
 
 When tests are successful, *replace* the url https://wwwdev.ebi.ac.uk/ena/submit/drop-box/submit/ with https://www.ebi.ac.uk/ena/submit/drop-box/submit/ for publishing. 
